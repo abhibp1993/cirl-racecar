@@ -1,0 +1,2 @@
+#!/bin/bash
+catkin_make -DCATKIN_BLACKLIST_PACKAGES="zed_ros;zed_display_rviz;zed_nodelet_example;zed_rtabmap_example;zed_tracking_sub_tutorial;zed_video_sub_tutorial;zed_wrapper;zed_depth_sub_tutorial;"

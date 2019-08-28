@@ -1,0 +1,31 @@
+[submodule "src/razor_imu_9dof"]
+	path = src/razor_imu_9dof
+	url = git@github.com:KristofRobot/razor_imu_9dof.git
+
+[submodule "src/rosserial"]
+    path = src/rosserial
+    url = git@github.com:ros-drivers/rosserial.git
+
+[submodule "src/geometry2"]
+    path = src/geometry2
+    url = git@github.com:ros/geometry2.git
+
+[submodule "src/zed-ros-wrapper"]
+    path = src/zed-ros-wrapper
+    url = git@github.com:stereolabs/zed-ros-wrapper.git
+
+[submodule "src/rplidar_ros"]
+    path = src/rplidar_ros
+    url = git@github.com:Slamtec/rplidar_ros.git
+
+[submodule "src/rosconsole"]
+    path = src/rosconsole
+    url = https://github.com/ros/rosconsole.git
+
+[submodule "src/robot_localization"]
+    path = src/robot_localization
+    url = git@github.com:cra-ros-pkg/robot_localization.git
+
+[submodule "src/vicon_bridge"]
+    path = src/vicon_bridge
+    url = https://github.com/ethz-asl/vicon_bridge

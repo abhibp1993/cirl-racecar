@@ -1,0 +1,20 @@
+<launch>
+    <!-- Xbox Controller -->
+    <node respawn="true" pkg="joy" type="joy_node" name="joy">
+        <param name="dev" type="string" value="/dev/input/js0" />
+        <param name="deadzone" value="0.12" />
+    </node>
+
+    <!-- Drive Controller -->
+    <node pkg="drive" type="drive_node" name="drive"/>
+
+    <!-- Serial Arduino Connection -->
+    <node pkg="rosserial_python" type="serial_node.py" name="rosserial">
+        <param name="port" value="/dev/arduino"/>
+        <param name="baud" value="38400"/>
+    </node>
+
+    
+    <node pkg="tf2_ros" type="static_transform_publisher" name="zed_tf"
+            args="0.19 0 0.2 0 0 0 base_link zed_camera_center" />
+</launch>

@@ -1,0 +1,23 @@
+<launch>
+    <!-- tf2 transforms -->
+    <node pkg="tf" type="static_transform_publisher" name="laser_tf" 
+            args="0.15 0 0.22 0 0 0 base_link laser 100"/>
+    <node pkg="tf" type="static_transform_publisher" name="zed_tf"
+            args="0.19 0 0.2 0 0 0 base_link zed_camera_center 100" />
+    <node pkg="tf" type="static_transform_publisher" name="imu_tf"
+            args="0.21 0 0.15 0 3.14 0 base_link base_imu_link 100" />
+
+    <!-- Robot Localization Launch -->
+    <node pkg="robot_localization" type="ekf_localization_node"
+        name="ekf_se" clear_params="true">
+        <rosparam command="load" file="config/ekf.yaml" />
+
+        <!--  Placeholder for output topic remapping
+        <remap from="odometry/filtered" to=""/>
+        <remap from="accel/filtered" to=""/>
+        -->
+    </node>
+    <node type="rviz" name="rviz" pkg="rviz" args="-d /home/nvidia/src/racecar-mqp/config/racecar.rviz" />
+    <node pkg="rosbag" type="play" name="player" output="screen"
+    args="/home/nvidia/src/racecar-mqp/kitchen_loop_clockwise.bag" />
+</launch>
